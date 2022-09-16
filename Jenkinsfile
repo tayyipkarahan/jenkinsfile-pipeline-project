@@ -14,5 +14,12 @@ pipeline {
                 sh 'echo using shell within Jenkinsfile'
              }
         }
+        stage('run') {
+            steps {
+                echo 'Clarusway_Way to Reinvent Yourself'
+                sh 'python --version'
+                sh 'python pipeline.py'
+            }
+        }
     }
 }
