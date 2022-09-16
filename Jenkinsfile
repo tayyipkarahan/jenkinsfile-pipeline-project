@@ -3,29 +3,14 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo "Clarusway_Way to Reinvent Yourself"
-                sh 'echo using shell within Jenkinsfile'
-                echo 'not using shell in the Jenkinsfile'
+                echo 'Compiling the java source code'
+                sh 'javac Hello.java'
             }
-        }
-        stage('Jenkinsfile') {
-            steps {
-                echo "Clarusway_Way to Reinvent Yourself"
-                sh 'echo using shell within Jenkinsfile'
-             }
         }
         stage('run') {
             steps {
-                echo 'Clarusway_Way to Reinvent Yourself'
-                sh 'python --version'
-                sh 'python pipeline.py'
-            }
-        }
-        stage('Stage-6') {
-            steps {
-                echo "Clarusway_Way to Reinvent Yourself"
-                sh 'echo using shell within Jenkinsfile'
-                echo 'not using shell in the Jenkinsfile'
+                echo 'Running the compiled java code.'
+                sh 'java Hello'
             }
         }
     }
